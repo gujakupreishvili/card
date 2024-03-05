@@ -51,6 +51,8 @@ const number_error = document.querySelector(".numbers-error");
 const data_error = document.querySelector(".mm-yy-erorr");
 const cvc_error = document.querySelector(".cvc-error");
 const less_numb_error = document.querySelector(".numbers-secerror");
+const less_number_yy_error = document.querySelector(".number-mm-yyerror");
+const less_number_cvc_error = document.querySelector(".number-cvc-error");
 function error() {
   let hasError = false;
 
@@ -81,27 +83,42 @@ function error() {
     mm_input.style.borderColor = "red";
     hasError = true;
     data_error.style.display = "block";
+  } else if (mm_input.value.length < 2) {
+    mm_input.style.borderColor = "red";
+    hasError = true;
+    less_number_yy_error.style.display = "block";
   } else {
     mm_input.style.borderColor = "";
     data_error.style.display = "none";
+    less_number_yy_error.style.display = "none";
   }
 
   if (yy_input.value === "") {
     yy_input.style.borderColor = "red";
     hasError = true;
+  } else if (yy_input.value.length < 2) {
+    yy_input.style.borderColor = "red";
+    hasError = true;
+    less_number_yy_error.style.display = "block";
   } else {
     yy_input.style.borderColor = "";
+    data_error.style.display = "none";
+    less_number_yy_error.style.display = "none";
   }
 
   if (cvc_input.value === "") {
     cvc_input.style.borderColor = "red";
     hasError = true;
     cvc_error.style.display = "block";
+  } else if (cvc_input.value.length < 2) {
+    number_input.style.borderColor = "red";
+    hasError = true;
+    less_number_cvc_error.style.display = "block";
   } else {
     cvc_input.style.borderColor = "";
     cvc_error.style.display = "none";
+    less_number_cvc_error.style.display = "none";
   }
-
   return hasError;
 }
 

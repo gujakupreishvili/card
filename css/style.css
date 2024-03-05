@@ -13,7 +13,7 @@ body{
   background-size: 100% 240px;
   flex-direction: column;
   align-items: center;
-  gap: 46px;
+  gap: 86px;
 }
 .card-div{
   display: flex;
@@ -220,7 +220,9 @@ body{
   display: none;
 }
 .mm-yy-erorr,
-.cvc-error{
+.cvc-error,
+.number-mm-yyerror,
+.number-cvc-error{
   margin-top: 5px;
   color: var(--Red, #FF5050);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -281,6 +283,13 @@ body{
   line-height: normal;
   border: none;
 }
+#oval{
+  position: absolute;
+  left: 19px;
+  top: 17px;
+  width: 54px;
+  height: 30px;
+}
 @media(width>=1024px){
   body{
     background-image: url(../img/background-desktop.png);
@@ -332,5 +341,11 @@ body{
   .back-div p{
     font-size: 14px;
     right: 50px;
+  }
+  #oval{
+    width: 84px;
+    height: 47px;
+    left: 32px;
+    top: 28px;
   }
 }
